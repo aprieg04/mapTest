@@ -1,4 +1,4 @@
-# maptest
+# frontend
 
 ## Project setup
 ```
