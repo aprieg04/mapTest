@@ -94,7 +94,7 @@ import leaflet from 'leaflet';
     }),
     mounted () {
       this.$vuetify.theme.dark = true
-      var mymap = leaflet.map('mapid').setView([41.66, -4.72], 18);
+      var mymap = leaflet.map('mapid').setView([42.59, -5.57], 18);
       console.log(mymap);
       leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org/%22%3EOpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/%22%3ECC-BY-SA</a>, Imagery © <a href="http://cloudmade.com/%22%3ECloudMade</a>',
