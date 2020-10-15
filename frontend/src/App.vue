@@ -48,6 +48,7 @@
 
     <v-main>
       <v-container class="fill-height">
+        <!--
         <v-row
           justify="center"
           align="center"
@@ -69,12 +70,17 @@
             </v-tooltip>
           </v-col>
         </v-row>
+        -->
+        <div id="mapid"></div>
+
       </v-container>
     </v-main>
   </v-app>
 </template>
 
+
 <script>
+import leaflet from 'leaflet';
   export default {
     props: {
       source: String,
@@ -86,8 +92,19 @@
       ],
       mini: true
     }),
-    created () {
+    mounted () {
       this.$vuetify.theme.dark = true
+      var mymap = leaflet.map('mapid').setView([41.66, -4.72], 18);
+      console.log(mymap);
+      leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org/%22%3EOpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/%22%3ECC-BY-SA</a>, Imagery © <a href="http://cloudmade.com/%22%3ECloudMade</a>',
+      maxZoom: 18
+      }).addTo(mymap);
+      leaflet.control.scale().addTo(mymap)
     },
   }
 </script>
+
+<style>
+  #mapid { height: 100%; width: 100%;}
+</style>
